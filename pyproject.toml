@@ -1,0 +1,43 @@
+[project]
+name = "clasp"
+version = "0.1.0"
+description = "Continual low-rank adapters for spatially placed concepts from one hypernetwork"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+# Versions of the environment our results were produced in.
+dependencies = [
+    "torch==2.6.0",
+    "torchvision==0.21.0",
+    "diffusers==0.30.0",
+    "transformers==4.44.2",
+    "tokenizers==0.19.1",
+    "huggingface_hub==0.36.2",
+    "safetensors==0.8.0",
+    "timm==1.0.24",
+    "numpy==1.26.4",
+    "Pillow==11.3.0",
+    "PyYAML==6.0.2",
+    "tqdm==4.67.1",
+]
+
+[project.optional-dependencies]
+# subject cutouts of the benchmark's concepts (scripts/segment_subjects.py)
+segment = ["rembg", "onnxruntime"]
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["clasp*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+# B023: closures that read the loop variable are called within the same iteration
+# B905: zip(strict=) would change behavior of the validated code
+ignore = ["B023", "B905"]

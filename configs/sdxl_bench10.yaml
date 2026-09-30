@@ -1,0 +1,115 @@
+seed: 2024
+resolution: 1024
+weight_dtype: bf16
+sd_model_id: stabilityai/stable-diffusion-xl-base-1.0
+output_dir: ./outputs/sdxl_bench10
+hyper:
+  rank: 4
+  head_hidden: 50
+  alpha_init: 1.0
+  learn_alpha: true
+task_cond:
+  enabled: true
+  key_dim: 256
+  ground_cond: true
+  ground_gsa: true
+token_mask_lora: true
+target_modules:
+- attn2.to_q
+- attn2.to_k
+- attn2.to_v
+- attn2.to_out.0
+concepts:
+- concept_id: cifc_dog
+  images_dir: data/CIFC/datasets/images/dog
+  caption_dir: data/CIFC/datasets/caption/dog
+  class_word: dog
+  category: pet
+  identifier: ''
+  prompt: a photo of dog
+- concept_id: cifc_duck_toy
+  images_dir: data/CIFC/datasets/images/duck_toy
+  caption_dir: data/CIFC/datasets/caption/duck_toy
+  class_word: duck toy
+  category: plushy
+  identifier: ''
+  prompt: a photo of duck toy
+  attr_strip:
+  - yellow rubber duck toy
+- concept_id: cifc_cat
+  images_dir: data/CIFC/datasets/images/cat
+  caption_dir: data/CIFC/datasets/caption/cat
+  class_word: cat
+  category: pet
+  identifier: ''
+  prompt: a photo of cat
+  attr_strip:
+  - fluffy cat
+- concept_id: cifc_backpack
+  images_dir: data/CIFC/datasets/images/backpack
+  caption_dir: data/CIFC/datasets/caption/backpack
+  class_word: backpack
+  category: plushy
+  identifier: ''
+  prompt: a photo of backpack
+  attr_strip:
+  - red backpack
+- concept_id: cifc_teddybear
+  images_dir: data/CIFC/datasets/images/teddybear
+  caption_dir: data/CIFC/datasets/caption/teddybear
+  class_word: teddy bear
+  category: plushy
+  identifier: ''
+  prompt: a photo of teddy bear
+- concept_id: cifc_painting
+  images_dir: data/CIFC/datasets/images/painting
+  caption_dir: data/CIFC/datasets/caption/painting
+  class_word: painting
+  category: style
+  identifier: ''
+  prompt: a photo of painting
+- concept_id: cifc_dog2
+  images_dir: data/CIFC/datasets/images/dog2
+  caption_dir: data/CIFC/datasets/caption/dog2
+  class_word: dog
+  category: pet
+  identifier: ''
+  prompt: a photo of dog
+- concept_id: cifc_drawing
+  images_dir: data/CIFC/datasets/images/drawing
+  caption_dir: data/CIFC/datasets/caption/drawing
+  class_word: drawing
+  category: style
+  identifier: ''
+  prompt: a photo of drawing
+- concept_id: cifc_cat2
+  images_dir: data/CIFC/datasets/images/cat2
+  caption_dir: data/CIFC/datasets/caption/cat2
+  class_word: cat
+  category: pet
+  identifier: ''
+  prompt: a photo of cat
+- concept_id: cifc_ink_painting
+  images_dir: data/CIFC/datasets/images/ink_painting
+  caption_dir: data/CIFC/datasets/caption/ink_painting
+  class_word: ink painting
+  category: style
+  identifier: ''
+  prompt: a photo of ink painting
+training:
+  steps_per_task: 800
+  augment: true
+  batch_size: 2
+  lr: 0.0001
+  weight_decay: 0.01
+  grad_clip: 1.0
+  log_every: 50
+  num_workers: 2
+  box_aug_p: 0.5
+  seg_dir: data/seg
+  bg_dir: data/backgrounds_sdxl
+  box_t_min_frac: 0.5
+  alpha_erode: 3
+reg:
+  weight: 3000.0
+  lookahead_lr: 0.0001

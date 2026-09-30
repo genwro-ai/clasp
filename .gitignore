@@ -1,0 +1,14 @@
+outputs
+data/CIFC
+data/customconcept101
+data/seg
+data/backgrounds*
+data/benchmark_dataset
+__pycache__/
+*.pt
+.venv/
+build/
+*.egg-info/
+.ruff_cache/
+website/_site/
+website/.quarto/

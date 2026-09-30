@@ -1,0 +1,18 @@
+project:
+  type: default
+  output-dir: _site
+  render:
+    - index.qmd
+  resources:
+    - data/**
+    - assets/**
+
+format:
+  html:
+    theme: [default, custom.scss]
+    katex: true
+    toc: false
+    smooth-scroll: true
+    page-layout: full
+    template-partials:
+      - _partials/title-block.html

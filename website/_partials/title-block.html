@@ -1,0 +1,56 @@
+<header class="paper-hero">
+  <div class="hero-topbar">
+    <a class="hero-logo hero-logo-gmum" href="https://gmum.net" target="_blank" rel="noopener">
+      <img src="assets/logos/gmum.png" alt="GMUM, Group of Machine Learning Research">
+    </a>
+    <span class="hero-logo-sep" aria-hidden="true"></span>
+    <a class="hero-logo" href="https://genwro.ai.pwr.edu.pl/" target="_blank" rel="noopener">
+      <img src="assets/genwro_logo.svg" alt="genwro.AI">
+    </a>
+  </div>
+
+  <div class="hero-content">
+    <h1 class="paper-title">$title$</h1>
+
+    $if(paper-authors)$
+    <div class="paper-authors">$paper-authors$</div>
+    $elseif(by-author)$
+    <div class="paper-authors">
+      $for(by-author)$<span class="paper-author">$if(it.url)$<a href="$it.url$" target="_blank" rel="noopener">$endif$$it.name.literal$$if(it.affiliations)$<sup>$for(it.affiliations)$$it.number$$sep$,$endfor$</sup>$endif$$if(it.url)$</a>$endif$</span>$sep$<span class="author-sep"> · </span>$endfor$
+    </div>
+    $endif$
+
+    $if(paper-affiliations)$
+    <div class="paper-affiliations">$paper-affiliations$</div>
+    $else$
+    $if(by-affiliation)$
+    <div class="paper-affiliations">
+      $for(by-affiliation)$<sup>$it.number$</sup> $it.name$$sep$ &nbsp;·&nbsp; $endfor$
+    </div>
+    $endif$
+    $endif$
+
+    $if(paper-venue)$
+    <div class="paper-venue">$paper-venue$</div>
+    $endif$
+
+    <div class="paper-links">
+      $if(link-paper)$<a href="$link-paper$" class="paper-btn paper-btn-primary" target="_blank" rel="noopener">📄 Paper</a>$endif$
+      $if(link-code)$<a href="$link-code$" class="paper-btn paper-btn-secondary" target="_blank" rel="noopener">💻 Code</a>$endif$
+      $if(link-arxiv)$<a href="$link-arxiv$" class="paper-btn paper-btn-secondary" target="_blank" rel="noopener"><img src="assets/arxiv.svg" alt="arXiv" class="btn-icon"> arXiv</a>$else$<span class="paper-btn paper-btn-secondary paper-btn-soon" aria-disabled="true"><img src="assets/arxiv.svg" alt="" class="btn-icon"> arXiv · soon</span>$endif$
+      $if(link-demo)$<a href="$link-demo$" class="paper-btn paper-btn-secondary" target="_blank" rel="noopener">🎮 Demo</a>$endif$
+      $if(link-video)$<a href="$link-video$" class="paper-btn paper-btn-secondary" target="_blank" rel="noopener">🎬 Video</a>$endif$
+      $if(link-poster)$<a href="$link-poster$" class="paper-btn paper-btn-secondary" target="_blank" rel="noopener">🪧 Poster</a>$endif$
+      $if(link-slides)$<a href="$link-slides$" class="paper-btn paper-btn-secondary" target="_blank" rel="noopener">📊 Slides</a>$endif$
+      $if(link-dataset)$<a href="$link-dataset$" class="paper-btn paper-btn-secondary" target="_blank" rel="noopener">🗄️ Dataset</a>$endif$
+      $if(link-models)$<a href="$link-models$" class="paper-btn paper-btn-secondary" target="_blank" rel="noopener">🤗 Models</a>$endif$
+    </div>
+  </div>
+</header>
+<div class="affil-logos">
+  <a href="https://pwr.edu.pl/en/" target="_blank" rel="noopener"><img src="assets/logos/pwr.svg" alt="Wrocław University of Science and Technology" class="lg-pwr"></a>
+  <a href="https://www.ideas.edu.pl" target="_blank" rel="noopener"><img src="assets/logos/ideas.svg" alt="IDEAS Research Institute" class="lg-ideas"></a>
+  <a href="https://en.uj.edu.pl" target="_blank" rel="noopener"><img src="assets/logos/uj.svg" alt="Jagiellonian University" class="lg-uj"></a>
+  <a href="https://akces-ncbr.pl/" target="_blank" rel="noopener"><img src="assets/logos/akces.webp" alt="AKCES NCBR" class="lg-akces"></a>
+  <a href="https://www.tooploox.com" target="_blank" rel="noopener"><img src="assets/logos/tooploox.svg" alt="Tooploox" class="lg-tooploox"></a>
+</div>

@@ -1,0 +1,395 @@
+seed: 2024
+resolution: 512
+weight_dtype: fp32
+sd_model_id: stable-diffusion-v1-5/stable-diffusion-v1-5
+output_dir: ./outputs/sd15_seq50
+hyper:
+  rank: 4
+  head_hidden: 50
+  alpha_init: 1.0
+  learn_alpha: true
+task_cond:
+  enabled: true
+  key_dim: 256
+  ground_cond: true
+  ground_gsa: true
+token_mask_lora: true
+target_modules:
+- attn2.to_q
+- attn2.to_k
+- attn2.to_v
+- attn2.to_out.0
+concepts:
+- concept_id: cifc_dog
+  images_dir: data/CIFC/datasets/images/dog
+  caption_dir: data/CIFC/datasets/caption/dog
+  class_word: dog
+  category: pet
+  identifier: ''
+  prompt: a photo of dog
+- concept_id: cifc_duck_toy
+  images_dir: data/CIFC/datasets/images/duck_toy
+  caption_dir: data/CIFC/datasets/caption/duck_toy
+  class_word: duck toy
+  category: plushy
+  identifier: ''
+  prompt: a photo of duck toy
+  attr_strip:
+  - yellow rubber duck toy
+- concept_id: cifc_cat
+  images_dir: data/CIFC/datasets/images/cat
+  caption_dir: data/CIFC/datasets/caption/cat
+  class_word: cat
+  category: pet
+  identifier: ''
+  prompt: a photo of cat
+  attr_strip:
+  - fluffy cat
+- concept_id: cifc_backpack
+  images_dir: data/CIFC/datasets/images/backpack
+  caption_dir: data/CIFC/datasets/caption/backpack
+  class_word: backpack
+  category: plushy
+  identifier: ''
+  prompt: a photo of backpack
+  attr_strip:
+  - red backpack
+- concept_id: cifc_teddybear
+  images_dir: data/CIFC/datasets/images/teddybear
+  caption_dir: data/CIFC/datasets/caption/teddybear
+  class_word: teddy bear
+  category: plushy
+  identifier: ''
+  prompt: a photo of teddy bear
+- concept_id: cifc_painting
+  images_dir: data/CIFC/datasets/images/painting
+  caption_dir: data/CIFC/datasets/caption/painting
+  class_word: painting
+  category: style
+  identifier: ''
+  prompt: a photo of painting
+- concept_id: cifc_dog2
+  images_dir: data/CIFC/datasets/images/dog2
+  caption_dir: data/CIFC/datasets/caption/dog2
+  class_word: dog
+  category: pet
+  identifier: ''
+  prompt: a photo of dog
+- concept_id: cifc_drawing
+  images_dir: data/CIFC/datasets/images/drawing
+  caption_dir: data/CIFC/datasets/caption/drawing
+  class_word: drawing
+  category: style
+  identifier: ''
+  prompt: a photo of drawing
+- concept_id: cifc_cat2
+  images_dir: data/CIFC/datasets/images/cat2
+  caption_dir: data/CIFC/datasets/caption/cat2
+  class_word: cat
+  category: pet
+  identifier: ''
+  prompt: a photo of cat
+- concept_id: cifc_ink_painting
+  images_dir: data/CIFC/datasets/images/ink_painting
+  caption_dir: data/CIFC/datasets/caption/ink_painting
+  class_word: ink painting
+  category: style
+  identifier: ''
+  prompt: a photo of ink painting
+- concept_id: cc101_actionfigure_1
+  images_dir: data/customconcept101/actionfigure_1
+  caption_dir: data/captions_cc101/actionfigure_1
+  class_word: action figure
+  category: object
+  identifier: ''
+  prompt: a photo of action figure
+- concept_id: cc101_decoritems_houseplant1
+  images_dir: data/customconcept101/decoritems_houseplant1
+  caption_dir: data/captions_cc101/decoritems_houseplant1
+  class_word: houseplant
+  category: object
+  identifier: ''
+  prompt: a photo of houseplant
+- concept_id: cc101_dish_1
+  images_dir: data/customconcept101/dish_1
+  caption_dir: data/captions_cc101/dish_1
+  class_word: dish
+  category: object
+  identifier: ''
+  prompt: a photo of dish
+- concept_id: cc101_flower_1
+  images_dir: data/customconcept101/flower_1
+  caption_dir: data/captions_cc101/flower_1
+  class_word: flower
+  category: object
+  identifier: ''
+  prompt: a photo of flower
+- concept_id: cc101_furniture_chair1
+  images_dir: data/customconcept101/furniture_chair1
+  caption_dir: data/captions_cc101/furniture_chair1
+  class_word: chair
+  category: object
+  identifier: ''
+  prompt: a photo of chair
+- concept_id: cc101_instrument_1
+  images_dir: data/customconcept101/instrument_1
+  caption_dir: data/captions_cc101/instrument_1
+  class_word: musical instrument
+  category: object
+  identifier: ''
+  prompt: a photo of musical instrument
+- concept_id: cc101_jewelry_earring
+  images_dir: data/customconcept101/jewelry_earring
+  caption_dir: data/captions_cc101/jewelry_earring
+  class_word: earring
+  category: object
+  identifier: ''
+  prompt: a photo of earring
+- concept_id: cc101_luggage_backpack1
+  images_dir: data/customconcept101/luggage_backpack1
+  caption_dir: data/captions_cc101/luggage_backpack1
+  class_word: backpack
+  category: object
+  identifier: ''
+  prompt: a photo of backpack
+- concept_id: cc101_person_1
+  images_dir: data/customconcept101/person_1
+  caption_dir: data/captions_cc101/person_1
+  class_word: person
+  category: pet
+  identifier: ''
+  prompt: a photo of person
+- concept_id: cc101_pet_cat2
+  images_dir: data/customconcept101/pet_cat2
+  caption_dir: data/captions_cc101/pet_cat2
+  class_word: cat
+  category: pet
+  identifier: ''
+  prompt: a photo of cat
+- concept_id: cc101_plushie_2
+  images_dir: data/customconcept101/plushie_2
+  caption_dir: data/captions_cc101/plushie_2
+  class_word: plushie
+  category: object
+  identifier: ''
+  prompt: a photo of plushie
+- concept_id: cc101_things_book
+  images_dir: data/customconcept101/things_book
+  caption_dir: data/captions_cc101/things_book
+  class_word: book
+  category: object
+  identifier: ''
+  prompt: a photo of book
+- concept_id: cc101_toy_bear
+  images_dir: data/customconcept101/toy_bear
+  caption_dir: data/captions_cc101/toy_bear
+  class_word: toy bear
+  category: object
+  identifier: ''
+  prompt: a photo of toy bear
+- concept_id: cc101_transport_car5
+  images_dir: data/customconcept101/transport_car5
+  caption_dir: data/captions_cc101/transport_car5
+  class_word: car
+  category: object
+  identifier: ''
+  prompt: a photo of car
+- concept_id: cc101_wearable_glasses
+  images_dir: data/customconcept101/wearable_glasses
+  caption_dir: data/captions_cc101/wearable_glasses
+  class_word: glasses
+  category: object
+  identifier: ''
+  prompt: a photo of glasses
+- concept_id: cc101_actionfigure_2
+  images_dir: data/customconcept101/actionfigure_2
+  caption_dir: data/captions_cc101/actionfigure_2
+  class_word: action figure
+  category: object
+  identifier: ''
+  prompt: a photo of action figure
+- concept_id: cc101_decoritems_houseplant2
+  images_dir: data/customconcept101/decoritems_houseplant2
+  caption_dir: data/captions_cc101/decoritems_houseplant2
+  class_word: houseplant
+  category: object
+  identifier: ''
+  prompt: a photo of houseplant
+- concept_id: cc101_dish_2
+  images_dir: data/customconcept101/dish_2
+  caption_dir: data/captions_cc101/dish_2
+  class_word: dish
+  category: object
+  identifier: ''
+  prompt: a photo of dish
+- concept_id: cc101_flower_2
+  images_dir: data/customconcept101/flower_2
+  caption_dir: data/captions_cc101/flower_2
+  class_word: flower
+  category: object
+  identifier: ''
+  prompt: a photo of flower
+- concept_id: cc101_furniture_chair2
+  images_dir: data/customconcept101/furniture_chair2
+  caption_dir: data/captions_cc101/furniture_chair2
+  class_word: chair
+  category: object
+  identifier: ''
+  prompt: a photo of chair
+- concept_id: cc101_instrument_music1
+  images_dir: data/customconcept101/instrument_music1
+  caption_dir: data/captions_cc101/instrument_music1
+  class_word: musical instrument
+  category: object
+  identifier: ''
+  prompt: a photo of musical instrument
+- concept_id: cc101_jewelry_ring
+  images_dir: data/customconcept101/jewelry_ring
+  caption_dir: data/captions_cc101/jewelry_ring
+  class_word: ring
+  category: object
+  identifier: ''
+  prompt: a photo of ring
+- concept_id: cc101_luggage_purse1
+  images_dir: data/customconcept101/luggage_purse1
+  caption_dir: data/captions_cc101/luggage_purse1
+  class_word: purse
+  category: object
+  identifier: ''
+  prompt: a photo of purse
+- concept_id: cc101_person_2
+  images_dir: data/customconcept101/person_2
+  caption_dir: data/captions_cc101/person_2
+  class_word: person
+  category: pet
+  identifier: ''
+  prompt: a photo of person
+- concept_id: cc101_pet_cat3
+  images_dir: data/customconcept101/pet_cat3
+  caption_dir: data/captions_cc101/pet_cat3
+  class_word: cat
+  category: pet
+  identifier: ''
+  prompt: a photo of cat
+- concept_id: cc101_plushie_bunny
+  images_dir: data/customconcept101/plushie_bunny
+  caption_dir: data/captions_cc101/plushie_bunny
+  class_word: bunny plushie
+  category: object
+  identifier: ''
+  prompt: a photo of bunny plushie
+- concept_id: cc101_things_book2
+  images_dir: data/customconcept101/things_book2
+  caption_dir: data/captions_cc101/things_book2
+  class_word: book
+  category: object
+  identifier: ''
+  prompt: a photo of book
+- concept_id: cc101_toy_gnome
+  images_dir: data/customconcept101/toy_gnome
+  caption_dir: data/captions_cc101/toy_gnome
+  class_word: toy gnome
+  category: object
+  identifier: ''
+  prompt: a photo of toy gnome
+- concept_id: cc101_transport_car1
+  images_dir: data/customconcept101/transport_car1
+  caption_dir: data/captions_cc101/transport_car1
+  class_word: car
+  category: object
+  identifier: ''
+  prompt: a photo of car
+- concept_id: cc101_wearable_jacket1
+  images_dir: data/customconcept101/wearable_jacket1
+  caption_dir: data/captions_cc101/wearable_jacket1
+  class_word: jacket
+  category: object
+  identifier: ''
+  prompt: a photo of jacket
+- concept_id: cc101_actionfigure_3
+  images_dir: data/customconcept101/actionfigure_3
+  caption_dir: data/captions_cc101/actionfigure_3
+  class_word: action figure
+  category: object
+  identifier: ''
+  prompt: a photo of action figure
+- concept_id: cc101_decoritems_houseplant3
+  images_dir: data/customconcept101/decoritems_houseplant3
+  caption_dir: data/captions_cc101/decoritems_houseplant3
+  class_word: houseplant
+  category: object
+  identifier: ''
+  prompt: a photo of houseplant
+- concept_id: cc101_furniture_chair3
+  images_dir: data/customconcept101/furniture_chair3
+  caption_dir: data/captions_cc101/furniture_chair3
+  class_word: chair
+  category: object
+  identifier: ''
+  prompt: a photo of chair
+- concept_id: cc101_instrument_music2
+  images_dir: data/customconcept101/instrument_music2
+  caption_dir: data/captions_cc101/instrument_music2
+  class_word: musical instrument
+  category: object
+  identifier: ''
+  prompt: a photo of musical instrument
+- concept_id: cc101_luggage_purse2
+  images_dir: data/customconcept101/luggage_purse2
+  caption_dir: data/captions_cc101/luggage_purse2
+  class_word: purse
+  category: object
+  identifier: ''
+  prompt: a photo of purse
+- concept_id: cc101_person_3
+  images_dir: data/customconcept101/person_3
+  caption_dir: data/captions_cc101/person_3
+  class_word: person
+  category: pet
+  identifier: ''
+  prompt: a photo of person
+- concept_id: cc101_pet_cat4
+  images_dir: data/customconcept101/pet_cat4
+  caption_dir: data/captions_cc101/pet_cat4
+  class_word: cat
+  category: pet
+  identifier: ''
+  prompt: a photo of cat
+- concept_id: cc101_plushie_cow
+  images_dir: data/customconcept101/plushie_cow
+  caption_dir: data/captions_cc101/plushie_cow
+  class_word: cow plushie
+  category: object
+  identifier: ''
+  prompt: a photo of cow plushie
+- concept_id: cc101_things_bottle1
+  images_dir: data/customconcept101/things_bottle1
+  caption_dir: data/captions_cc101/things_bottle1
+  class_word: bottle
+  category: object
+  identifier: ''
+  prompt: a photo of bottle
+- concept_id: cc101_toy_pikachu1
+  images_dir: data/customconcept101/toy_pikachu1
+  caption_dir: data/captions_cc101/toy_pikachu1
+  class_word: toy figure
+  category: object
+  identifier: ''
+  prompt: a photo of toy figure
+training:
+  steps_per_task: 800
+  batch_size: 2
+  lr: 0.0001
+  weight_decay: 0.01
+  grad_clip: 1.0
+  log_every: 50
+  num_workers: 2
+  box_aug_p: 0.5
+  seg_dir: data/seg
+  bg_dir: data/backgrounds
+  box_t_min_frac: 0.5
+  alpha_erode: 3
+  augment: true
+reg:
+  weight: 7120.0
+  lookahead_lr: 0.0001
