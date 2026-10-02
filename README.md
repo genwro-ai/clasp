@@ -7,7 +7,7 @@
 <sup>1</sup>Wrocław University of Science and Technology · <sup>2</sup>IDEAS Research Institute · <sup>3</sup>Jagiellonian University · <sup>4</sup>AKCES NCBR · <sup>5</sup>Tooploox
 
 [![Project page](https://img.shields.io/badge/Project-page-e41717)](https://genwro-ai.github.io/clasp)
-![arXiv](https://img.shields.io/badge/arXiv-coming%20soon-b31b1b)
+[![arXiv](https://img.shields.io/badge/arXiv-2610.01331-b31b1b)](https://arxiv.org/abs/2610.01331)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
 </div>
@@ -78,7 +78,16 @@ The SD-1.5 results use seeds 2024, 2025 and 2026. The configs set 2024. For the 
 
 ## Citation
 
-Coming soon, with the arXiv version of the paper.
+```bibtex
+@article{gromski2026clasp,
+  title   = {{CLASP}: Continual Low-rank Adapters for Spatially Placed
+             Concepts from One Hypernetwork},
+  author  = {Gromski, Wojciech and Krukowski, Patryk and Miksa, Jan and
+             Zieba, Maciej and Spurek, Przemys{\l}aw},
+  journal = {arXiv preprint arXiv:2610.01331},
+  year    = {2026}
+}
+```
 
 ## Project page
 

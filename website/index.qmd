@@ -7,8 +7,8 @@ paper-affiliations: "<sup>1</sup>&nbsp;Wrocław&nbsp;University&nbsp;of&nbsp;Sci
 
 paper-venue: "Preprint"
 
-# link-paper: "https://arxiv.org/pdf/XXXX.XXXXX"
-# link-arxiv: "https://arxiv.org/abs/XXXX.XXXXX"
+link-paper: "https://arxiv.org/pdf/2610.01331"
+link-arxiv: "https://arxiv.org/abs/2610.01331"
 link-code: "https://github.com/genwro-ai/clasp"
 
 pagetitle: "CLASP"
@@ -160,7 +160,18 @@ of Figure 7 in the paper.
 ## Citation
 
 ```{=html}
-<p class="cite-soon">The BibTeX entry will appear here once the paper is on arXiv.</p>
+<button class="ghost copy-bib" id="copy-bib">Copy BibTeX</button>
+```
+
+```bibtex
+@article{gromski2026clasp,
+  title   = {{CLASP}: Continual Low-rank Adapters for Spatially Placed
+             Concepts from One Hypernetwork},
+  author  = {Gromski, Wojciech and Krukowski, Patryk and Miksa, Jan and
+             Zieba, Maciej and Spurek, Przemys{\l}aw},
+  journal = {arXiv preprint arXiv:2610.01331},
+  year    = {2026}
+}
 ```
 
 ```{=html}
